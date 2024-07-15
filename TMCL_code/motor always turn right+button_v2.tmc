@@ -1,0 +1,30 @@
+// Define  parameters
+max_speed = 2047
+max_acc = 50
+
+SAP 4, 0, max_speed
+SAP 5, 0, max_acc
+SGP 0, 2, 0    //set User variable 0
+
+
+Check:
+	GIO 1, 0    //read PWMD0
+	COMP 1
+	JC NZ, Change
+	JA Run
+
+Change:
+	GGP 0, 2    //get User variable 0
+	COMP 1
+	JC ZE, Block
+	JA Check
+
+Block:
+	MST 0
+	SGP 0, 2, 1    //set User variable 0
+	JA Check
+
+Run:
+	ROR 0, max_speed
+	SGP 0, 2, 0    //set User variable 0
+	JA Check

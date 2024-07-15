@@ -1,0 +1,10 @@
+
+#module 1 COM4/USB/id1/TMCM-1110 
+SGP 0, 2, 0, 1    //set User variable 0
+SGP 0, 2, 1, 1    //set User variable 0
+GGP 0, 2, 1    //get User variable 0
+MST 0, 1
+SGP 0, 2, 0, 1    //set User variable 0
+GGP 0, 2, 1    //get User variable 0
+SGP 0, 2, 0, 1    //set User variable 0
+SGP 0, 2, 1, 1    //set User variable 0
